@@ -235,17 +235,18 @@ export default function Home() {
           >
             <div className={styles.card}>
               <div style={{ background: "#111111", borderRadius: 3 }}>
-                <div style={{ height: 150 }}>
-                  <img
-                    width={null}
-                    height={null}
+                <div style={{ height: 150, position: "relative" }}>
+                  <Image
+                    layout="fill"
                     src="/images/5.png"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      borderRadius: 10,
-                    }}
+                    objectFit="cover"
+
+                    // style={{
+                    //   width: "100%",
+                    //   height: "100%",
+                    //   objectFit: "cover",
+                    //   borderRadius: 10,
+                    // }}
                   />
                 </div>
                 <div style={{ padding: 16 }}>
