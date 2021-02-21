@@ -1,6 +1,6 @@
 .blueRibbon {
   background: #254dd8;
-  height: 5px;
+  height: 3px;
 }
 
 .container {
@@ -10,6 +10,32 @@
 }
 
 .nav {
+  color: white;
+  height: 4em;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.nav::before {
+  background-color: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(10px);
+  content: "";
+  height: 100%;
+  position: absolute;
+
+  width: 100%;
+  z-index: -1;
+}
+
+.footer {
   display: flex;
   align-items: center;
   color: white;
@@ -28,4 +54,40 @@
   background: linear-gradient(to right, #254dd8 0%, #b74652 56%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.main {
+  margin-top: 10em;
+}
+
+.card {
+  border: 3px;
+  position: relative;
+  border-radius: 3px;
+  flex-basis: 30%;
+  /* margin-left: 5px;
+  margin-bottom: 5px; */
+  margin-bottom: 20px;
+  color: white;
+
+  /* flexBasis: "30%",
+  height: 300,
+  color: "white", */
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
+  background: linear-gradient(to right, #254dd8 0%, #b74652 56%);
+}
+
+.hero {
+  background: red;
 }

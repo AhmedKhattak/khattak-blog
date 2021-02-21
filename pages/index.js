@@ -14,51 +14,56 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.blueRibbon}></div>
-      <nav className={[styles.nav, styles.container].join(" ")}>
-        <span style={{ fontWeight: "bold", fontSize: "1.5em" }}>Ahmed.R.K</span>
-        <div
-          style={{
-            marginLeft: "auto",
-            display: "flex",
-            flexGrow: 0.5,
-            flexShrink: 0,
-            justifyContent: "space-around",
-            alignItems: "center",
-          }}
-        >
-          <a className={styles.navLink} href="asa">
-            Home
-          </a>
-
-          <a className={styles.navLink} href="asa">
-            Portfolio
-          </a>
-
-          <a className={styles.navLink} href="asa">
-            About Me
-          </a>
-
-          <a className={styles.navLink} href="asa">
-            Contact
-          </a>
-
-          <button
+      <nav className={[styles.nav].join(" ")}>
+        <div className={styles.blueRibbon}></div>
+        <div className={[styles.navInner, styles.container].join(" ")}>
+          <span style={{ fontWeight: "bold", fontSize: "1.5em" }}>
+            Ahmed.R.K
+          </span>
+          <div
             style={{
-              borderWidth: 0,
-              borderRadius: 6,
-              backgroundColor: "#254DD8",
-              height: 40,
-              width: 120,
-              color: "white",
+              marginLeft: "auto",
+              display: "flex",
+              flexGrow: 0.5,
+              flexShrink: 0,
+              justifyContent: "space-around",
+              alignItems: "center",
             }}
           >
-            Hire Me
-          </button>
+            <a className={styles.navLink} href="asa">
+              Home
+            </a>
+
+            <a className={styles.navLink} href="asa">
+              Portfolio
+            </a>
+
+            <a className={styles.navLink} href="asa">
+              About Me
+            </a>
+
+            <a className={styles.navLink} href="asa">
+              Contact
+            </a>
+
+            <button
+              style={{
+                borderWidth: 0,
+                borderRadius: 6,
+                backgroundColor: "#254DD8",
+                height: 40,
+                width: 120,
+                color: "white",
+                cursor: "pointer",
+              }}
+            >
+              Hire Me
+            </button>
+          </div>
         </div>
       </nav>
 
-      <main className={styles.container} style={{ marginTop: "1em" }}>
+      <main className={styles.container} style={{ marginTop: "3em" }}>
         <section style={{ display: "flex", justifyContent: "space-between" }}>
           <div style={{ flex: 0.5 }}>
             <p
@@ -67,6 +72,7 @@ export default function Home() {
                 fontSize: "3.0em",
                 color: "white",
                 marginBottom: 32,
+                lineHeight: "1.125em",
               }}
             >
               I Build Web Apps
@@ -98,6 +104,7 @@ export default function Home() {
                   borderRadius: 5,
                   width: 208,
                   color: "white",
+                  cursor: "pointer",
                   fontWeight: 600,
                   display: "flex",
                   alignItems: "center",
@@ -118,7 +125,7 @@ export default function Home() {
                   borderRadius: 5,
                   width: 150,
                   color: "white",
-
+                  cursor: "pointer",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -136,13 +143,22 @@ export default function Home() {
               gyroscope={true}
             > */}
             <Lottie
+              isClickToPauseDisabled={true}
               options={{
                 animationData: animationData,
-                rendererSettings: {},
+                rendererSettings: {
+                  progressiveLoad: true,
+                  clearCanvas: true,
+                  preserveAspectRatio: true,
+                },
               }}
-              style={{ marginTop: 0 }}
-              height={400}
-              width={400}
+              style={{
+                marginTop: 0,
+                width: 450,
+                height: 450,
+                margin: "none !important",
+                marginTop: -60,
+              }}
             />
             {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -203,7 +219,6 @@ export default function Home() {
         <section>
           <p
             style={{
-              marginTop: "3em",
               fontWeight: "bold",
               fontSize: "1.5em",
               color: "white",
@@ -211,11 +226,114 @@ export default function Home() {
           >
             Projects
           </p>
-          <div></div>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              // justifyContent: "space-evenly",
+            }}
+          >
+            <div className={styles.card}>
+              <div style={{ background: "#111111", borderRadius: 3 }}>
+                <div style={{ height: 150 }}>
+                  <img
+                    width={null}
+                    height={null}
+                    src="/images/5.png"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      borderRadius: 10,
+                    }}
+                  />
+                </div>
+                <div style={{ padding: 16 }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <p style={{ fontWeight: 600 }}>COVID-19 Dashboard</p>
+                    <button
+                      style={{
+                        background: "#22273A",
+                        padding: 8,
+                        borderWidth: 0,
+                        borderRadius: 5,
+
+                        color: "white",
+                        cursor: "pointer",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      Visit Site
+                    </button>
+                  </div>
+
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <Image src="/images/github.svg" width={20} height={20} />
+                    <span style={{ marginLeft: 8 }}>
+                      git hub link over here
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
 
-      <footer className={styles.footer}></footer>
+      <footer>
+        <nav className={[styles.footer, styles.container].join(" ")}>
+          <span style={{ fontWeight: "bold", fontSize: "1.5em" }}>
+            Ahmed.R.K
+          </span>
+          <div
+            style={{
+              marginLeft: "auto",
+              display: "flex",
+              flexGrow: 0.5,
+              flexShrink: 0,
+              justifyContent: "space-around",
+              alignItems: "center",
+            }}
+          >
+            <a className={styles.navLink} href="asa">
+              Home
+            </a>
+
+            <a className={styles.navLink} href="asa">
+              Portfolio
+            </a>
+
+            <a className={styles.navLink} href="asa">
+              About Me
+            </a>
+
+            <a className={styles.navLink} href="asa">
+              Contact
+            </a>
+
+            <button
+              style={{
+                borderWidth: 0,
+                borderRadius: 6,
+                backgroundColor: "#254DD8",
+                height: 40,
+                width: 120,
+                color: "white",
+              }}
+            >
+              Hire Me
+            </button>
+          </div>
+        </nav>
+      </footer>
     </div>
   );
 }
